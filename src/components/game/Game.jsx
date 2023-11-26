@@ -406,7 +406,7 @@ import { useEffect, useState, useMemo } from "react";
       {username ? (
         <>
           <div className={styles.main}>
-            <img src={Image} style={{width: "100%", height:"100%"}} />
+            <img src={Image} style={{width: "100%", height:"180%"}} />
             
             {stop ? (
               <>
@@ -426,14 +426,14 @@ import { useEffect, useState, useMemo } from "react";
                     <Timer setStop={setStop} questionNumber={questionNumber} />
                   </div>
                 </div>
-                <div className={styles.bottom}>
+                
                   <Trivia
                     data={data}
                     setStop={setStop}
                     questionNumber={questionNumber}
                     setQuestionNumber={setQuestionNumber}
                   />
-                </div>
+                
               </>
             )}
           </div>
@@ -463,5 +463,4 @@ import { useEffect, useState, useMemo } from "react";
 };
 
 export default Game;
-
 

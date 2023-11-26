@@ -11,7 +11,7 @@ import final from "../../assets/final.mp3"
 const Trivia = ({ data, setStop, questionNumber, setQuestionNumber }) => {
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
-  const [className, setClassName] = useState(styles.answer);
+  const [className, setClassName] = useState(styles.answers);
 
   const [letsPlay] = useSound(play);
   const [correctAnswer] = useSound(correct);
@@ -35,12 +35,12 @@ const Trivia = ({ data, setStop, questionNumber, setQuestionNumber }) => {
 
   const handleClick = (a) => {
     setSelectedAnswer(a);
-    setClassName(`${styles.answer} ${styles.selected}`);
+    setClassName(`${styles.answers} ${styles.selected}`);
     delay(3000, () =>
       setClassName(
         a.correct
-          ? `${styles.answer} ${styles.correct}`
-          : `${styles.answer} ${styles.wrong}`
+          ? `${styles.answers} ${styles.correct}`
+          : `${styles.answers} ${styles.wrong}`
       )
     );
 
@@ -72,8 +72,8 @@ const Trivia = ({ data, setStop, questionNumber, setQuestionNumber }) => {
 
 
   return (
-    <div className={styles.trivia}>
-      <div className={styles.question}>{question?.question}</div>
+    <div className={styles.trivia}style={{marginTop:"-50%"}}>
+      <div className={styles.question} >{question?.question}</div>
       <div className={styles.anscontainer}>
         {question?.answers.map((a, index) => (
           <div
